@@ -53,7 +53,6 @@ function App() {
           phone: phone,
           password: password,
         });
-
       });
     } catch (err) {
       // Handle Error Here
@@ -89,10 +88,26 @@ function App() {
       setValues(humanValueArray[5]);
     }
   };
+  // console.log(people);
+  
 
   const addPerson = () => {
     setTable(true);
+
+    if (people.length === 0) {
+      setPeople([...people, variables]);
+    } else {
+      people.forEach((person) => {
+        if (person.name === variables.name) {
+          alert("Person already exists");
+        } else {
+          setPeople([...people, variables]);
+        }
+      });
+    }
   };
+
+  
 
   return (
     <div className="App">
@@ -100,11 +115,7 @@ function App() {
       <div className="card">
         <div className="card-begin"></div>
         <div className="card-container">
-          <img
-            src={userPic}
-            alt="person"
-            className="card-container-img"
-          />
+          <img src={userPic} alt="person" className="card-container-img" />
           <p>My {title} is</p>
           <p>{values}</p>
         </div>
@@ -137,7 +148,7 @@ function App() {
           />
         </div>
         <div className="card-buttons">
-          <button>NEW USER</button>
+          <button onClick={newPerson}>NEW USER</button>
           <button onClick={addPerson}>ADD USER</button>
         </div>
         <table className={table ? "card-table" : "card-table-first"}>
@@ -148,10 +159,16 @@ function App() {
             <th>Age</th>
           </thead>
           <tbody>
-            <td>{variables.name}</td>
-            <td>{variables.email}</td>
-            <td>{variables.phone}</td>
-            <td>{variables.age}</td>
+            {people.map((person) => {
+              return (
+                <tr>
+                  <td>{person.name}</td>
+                  <td>{person.email}</td>
+                  <td>{person.phone}</td>
+                  <td>{person.age}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
