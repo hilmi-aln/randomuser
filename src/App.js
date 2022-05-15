@@ -53,6 +53,8 @@ function App() {
           phone: phone,
           password: password,
         });
+        setTitle("name");
+        setValues(name);
       });
     } catch (err) {
       // Handle Error Here
@@ -61,6 +63,7 @@ function App() {
   };
   useEffect(() => {
     newPerson();
+    
   }, []);
 
   const handleHuman = (e) => {
