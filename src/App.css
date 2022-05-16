@@ -24,12 +24,12 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 60vh;
+  min-height: 70vh;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px rgb(0,0,0,0.2);
+  box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.2);
 }
-.card-container-img{
+.card-container-img {
   border-radius: 50%;
   width: 100px;
   /* border: 1px solid black; */
@@ -37,7 +37,7 @@ body {
   outline-offset: 3px;
   /* box-shadow: 5px 5px 5px  rgb(0,0,0,0.5); */
 }
-.card-container{
+.card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,7 +55,7 @@ body {
   border-radius: 50%;
   padding: 5px;
   cursor: pointer;
-  box-shadow: 3px 3px 3px rgb(0,0,0,0.2);
+  box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.2);
 }
 .card-buttons {
   display: flex;
@@ -71,24 +71,22 @@ button {
   padding: 10px;
   width: 8rem;
 }
-button:hover{
-  background-color:rgb(254, 200, 97)
+button:hover {
+  background-color: rgb(254, 200, 97);
 }
-.card-table-first{
-  
-  display:none;
+.card-table-first {
+  display: none;
 }
-.card-table{
+.card-table {
   width: 90%;
 }
-.card-table *{
+.card-table * {
   border: 1px solid white;
 }
-thead{
-  background-color:rgb(254, 200, 97);
-  color:rgb(156, 77, 140)
+thead {
+  background-color: rgb(254, 200, 97);
+  color: rgb(156, 77, 140);
 }
-tbody{
+tbody {
   text-align: center;
 }
-

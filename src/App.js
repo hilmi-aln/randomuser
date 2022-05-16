@@ -115,7 +115,7 @@ function App() {
     <div className="App">
       <img className="cw" src={cw} alt="clarusway" />
       <div className="card">
-        <div className="card-begin"></div>
+        
         <div className="card-container">
           <img src={userPic} alt="person" className="card-container-img" />
           <p>My {title} is</p>
