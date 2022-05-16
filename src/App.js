@@ -63,7 +63,6 @@ function App() {
   };
   useEffect(() => {
     newPerson();
-    
   }, []);
 
   const handleHuman = (e) => {
@@ -92,7 +91,6 @@ function App() {
     }
   };
   // console.log(people);
-  
 
   const addPerson = () => {
     setTable(true);
@@ -101,7 +99,10 @@ function App() {
       setPeople([...people, variables]);
     } else {
       people.forEach((person) => {
-        if (person.name === variables.name) {
+        if (
+          people.length > 0 &&
+          people[people.length - 1].name === variables.name
+        ) {
           alert("Person already exists");
         } else {
           setPeople([...people, variables]);
@@ -109,8 +110,6 @@ function App() {
       });
     }
   };
-
-  
 
   return (
     <div className="App">
@@ -162,9 +161,9 @@ function App() {
             <th>Age</th>
           </thead>
           <tbody>
-            {people.map((person) => {
+            {people.map((person, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <td>{person.name}</td>
                   <td>{person.email}</td>
                   <td>{person.phone}</td>
